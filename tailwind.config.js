@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        josefinSans: "'Josefin Sans', sans-serif"
+        josefinSans: "'Josefin Sans', sans-serif",
+        eduSans: "'Edu NSW ACT Foundation', cursive"
       }
     },
   },

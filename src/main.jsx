@@ -7,7 +7,7 @@ import router from './Routes/router.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <div className='max-w-screen-2xl mx-auto p-0 font-josefinSans'>
+    <div className='max-w-screen-2xl mx-auto p-0 font-josefinSans text-white' style={{backgroundImage: 'url("https://i.ibb.co/WKH3bCM/blackBg.jpg")'}}>
     <RouterProvider router={router}></RouterProvider>
     </div>
   </React.StrictMode>,

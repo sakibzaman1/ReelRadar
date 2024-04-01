@@ -19,7 +19,8 @@ const YoutubeSlider = ({ videos }) => {
         {videos.map((video, index) => (
           <div key={index} style={{ display: index === currentIndex ? 'block' : 'none' }}>
           <div className="video-container">
-            <ReactPlayer
+         <div className='video-overlay'>
+         <ReactPlayer
               url={video.url}
               width="100%"
               height="100%"
@@ -34,6 +35,7 @@ const YoutubeSlider = ({ videos }) => {
                 },
               }}
             />
+         </div>
           </div>
           </div>
         ))}
