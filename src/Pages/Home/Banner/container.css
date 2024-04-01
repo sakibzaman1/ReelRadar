@@ -1,0 +1,15 @@
+.video-container {
+    position: relative;
+    width: 100%; /* Adjust the width as needed */
+    height: 50vh; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .video-container .react-player {
+    position: absolute;
+    top: -25%; /* Adjust the top offset to crop the video */
+    left: -25%; /* Adjust the left offset to crop the video */
+    width: 150%; /* Adjust the width to compensate for the offset */
+    height: 150%; /* Adjust the height to compensate for the offset */
+  }
+  
