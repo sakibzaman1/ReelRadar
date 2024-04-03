@@ -9,7 +9,7 @@ const MainLayout = () => {
             <section>
                 <Navbar></Navbar>
             </section>
-            <section className='px-4'>
+            <section className='lg:px-4'>
                 <Outlet></Outlet>
             </section>
             <section>

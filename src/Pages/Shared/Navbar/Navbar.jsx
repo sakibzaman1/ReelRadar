@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import sloganLogo from '../../../assets/Reel_Radar_slogan-nobg.png'
 import './navbar.css'
@@ -6,8 +6,22 @@ import { BiSolidCameraMovie } from "react-icons/bi";
 import defaultProfile from '../../../assets/default-profile.jpg'
 import { FaAnglesRight } from "react-icons/fa6";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
+
+  const {user, signOutUser} = useContext(AuthContext);
+
+    // Sign Out Button
+
+    const handleSignOut = () => {
+      signOutUser()
+          .then(() => {
+            console.log('User Signed Out')
+          })
+          .catch(error => console.log(error.message))
+  }
+  
 
   const menuOptions = <>
   
@@ -54,7 +68,7 @@ const Navbar = () => {
     </button> </li></Link>
      <Link> <li className='navLinks '>Watchlist</li></Link>
        <Link> <li className='navLinks'>Subscribe</li></Link>
-       <Link> <li className='navLinks '>Sign in</li></Link>
+       <Link to='/signin'> <li className='navLinks '>Sign in</li></Link>
     </ul>
     </>
     const mobileNavOptions = <>
@@ -72,14 +86,14 @@ const Navbar = () => {
       <Link> <li className='navLinks '>ReelRadar Pro</li></Link>
       <Link> <li className='navLinks '>Watchlist</li></Link>
        <Link> <li className='navLinks'>Subscribe</li></Link>
-       <Link> <li className='navLinks '>Sign in</li></Link>
+       <Link to='/signin'> <li className='navLinks '>Sign in</li></Link>
     </ul>
   </div>
 </div>
     </>
     return (
         <div>
-            <div className="navbar bg-none text-white  p-0">
+            <div className="navbar bg-slate-300 text-black bg-opacity-25  p-0">
   <div className="navbar-start">
     <div>
         <img className='w-28 h-20' src="https://i.ibb.co/dP6N7N4/Reel-Radar-Logo.png" alt="" />
@@ -110,7 +124,7 @@ const Navbar = () => {
     <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-8 rounded-full border-2">
-          <img alt="Tailwind CSS Navbar component" src={defaultProfile} />
+          <img alt="Tailwind CSS Navbar component" src={user? user.photoURL : defaultProfile} />
         </div>
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
@@ -121,7 +135,7 @@ const Navbar = () => {
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><button onClick={handleSignOut}>Sign out</button></li>
       </ul>
     </div>
   </div>
