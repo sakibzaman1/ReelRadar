@@ -21,17 +21,15 @@ const Upcoming = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="mySwiper  w-[80%] h-[550px] border-t-8 border-sky-400"
+            className="mySwiper  w-[80%] h-[600px] border-t-8 border-sky-400"
           >
             <SwiperSlide><img src="https://www.movieposters.com/cdn/shop/files/tarot_nxigdvu5_480x.progressive.jpg?v=1708723278" alt="" /></SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            <SwiperSlide>Slide 5</SwiperSlide>
-            <SwiperSlide>Slide 6</SwiperSlide>
-            <SwiperSlide>Slide 7</SwiperSlide>
-            <SwiperSlide>Slide 8</SwiperSlide>
-            <SwiperSlide>Slide 9</SwiperSlide>
+            <SwiperSlide><img src="https://www.movieposters.com/cdn/shop/files/inside_out_two_ver2_480x.progressive.jpg?v=1711998871" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="https://www.movieposters.com/cdn/shop/files/la-chimera_66zmhpiv_480x.progressive.jpg?v=1710337039" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="https://www.movieposters.com/cdn/shop/files/immaculate_p7zu5lnq_480x.progressive.jpg?v=1710335575" alt="" /></SwiperSlide>
+            <SwiperSlide><img src="https://www.movieposters.com/cdn/shop/files/kraven-the-hunter_fjppr61l_480x.progressive.jpg?v=1700498044" alt="" /></SwiperSlide>
+          
+            
           </Swiper>
         </>
       );

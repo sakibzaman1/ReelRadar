@@ -22,7 +22,7 @@ const ToWatch = () => {
     const [toWatch, setToWatch] = useState();
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/towatch`)
+        fetch(`https://reel-radar-server.vercel.app/towatch`)
         .then(res=> res.json())
         .then(data=> setToWatch(data))
     },[])
@@ -56,9 +56,9 @@ const ToWatch = () => {
                 <div className='flex items-center justify-between'>
                 <div className='flex gap-2 items-center'>
                 <IoIosPlay size={20}></IoIosPlay>
-                <p>Trailer</p>
+                <p className='cursor-pointer'>Trailer</p>
                 </div>
-                <FaInfoCircle></FaInfoCircle>
+                <FaInfoCircle className='cursor-pointer'></FaInfoCircle>
                 </div>
                 </div>
                 

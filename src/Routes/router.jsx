@@ -7,11 +7,13 @@ import Register from '../Pages/Register/Register';
 import DashboardLayout from '../Layouts/DashboardLayout/DashboardLayout';
 import UserProfile from '../Dashboard/Profile/User/UserProfile';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
+import ErrorPage from '../Components/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
