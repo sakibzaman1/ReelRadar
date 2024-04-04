@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         josefinSans: "'Josefin Sans', sans-serif",
-        eduSans: "'Edu NSW ACT Foundation', cursive"
+        eduSans: "'Edu NSW ACT Foundation', cursive",
+        unbounded : "'Unbounded', sans-serif"
       }
     },
   },

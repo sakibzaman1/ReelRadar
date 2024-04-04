@@ -24,12 +24,12 @@ const Featured = () => {
           modules={[Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide><img className='h-60' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
-          <SwiperSlide><img className='h-60' src="https://www.movieposters.com/cdn/shop/files/kingdom-of-the-planet-of-the-apes_kokzpb3e_480x.progressive.jpg?v=1710515526" alt="" /></SwiperSlide>
-          <SwiperSlide><img className='h-60' src="https://www.movieposters.com/cdn/shop/files/french-girl_m52kjdld_480x.progressive.jpg?v=1710337331" alt="" /></SwiperSlide>
-          <SwiperSlide><img className='h-60' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
-          <SwiperSlide><img className='h-60' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
-          <SwiperSlide><img className='h-60' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
+          <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
+          <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/kingdom-of-the-planet-of-the-apes_kokzpb3e_480x.progressive.jpg?v=1710515526" alt="" /></SwiperSlide>
+          <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/french-girl_m52kjdld_480x.progressive.jpg?v=1710337331" alt="" /></SwiperSlide>
+          <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
+          <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
+          <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>
          
         </Swiper>
       </>

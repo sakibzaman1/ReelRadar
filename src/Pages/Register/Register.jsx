@@ -222,7 +222,7 @@ const Register = () => {
                     className={`w-full  font-semibold text-white h-14  ${
                       isDisabled
                         ? "bg-gray-600"
-                        : " bg-gradient-to-r from-green-900 via-green-700 to-green-200  hover:scale-110 transition-transform"
+                        : " bg-gradient-to-r from-green-950 via-green-700 to-green-200  hover:scale-110 transition-transform"
                     }`}
                   >
                     Submit

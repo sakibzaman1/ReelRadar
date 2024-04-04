@@ -93,7 +93,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-slate-300 text-black bg-opacity-25  p-0">
+            <div className="navbar bg-slate-300 text-white bg-opacity-25  p-0">
   <div className="navbar-start">
     <div>
         <img className='w-28 h-20' src="https://i.ibb.co/dP6N7N4/Reel-Radar-Logo.png" alt="" />
@@ -111,7 +111,7 @@ const Navbar = () => {
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <a className="btn btn-ghost text-3xl font-bold text-sky-300 font-eduSans ">Your Reel Insights</a>
+    <a className="btn btn-ghost text-3xl font-bold text-sky-300 font-unbounded ">Your Reel Insights</a>
     <div>
         <BiSolidCameraMovie size={30}></BiSolidCameraMovie>
     </div>
@@ -129,10 +129,10 @@ const Navbar = () => {
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <a className="justify-between">
+          <Link to='/userProfile' className="justify-between">
             Profile
             <span className="badge">New</span>
-          </a>
+          </Link>
         </li>
         <li><a>Settings</a></li>
         <li><button onClick={handleSignOut}>Sign out</button></li>

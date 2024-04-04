@@ -14,7 +14,7 @@ const Banner = () => {
         <Videos></Videos>
         </div>
         <div>
-            <h1 className="text-3xl my-6">Featured Today</h1>
+            <h1 className="text-4xl my-10 border-l-8 border-sky-600 px-4">Featured Today</h1>
             <Featured></Featured>
         </div>
       </section>

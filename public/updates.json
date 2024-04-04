@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "headline": "New Trailer Released for 'Spider-Man: No Way Home'",
+      "details": "Marvel Studios has dropped an exciting new trailer for the upcoming film 'Spider-Man: No Way Home,' showcasing thrilling action sequences and hints at a multiverse storyline. Fans are eagerly anticipating its release on December 17th.",
+      "date": "2024-03-20",
+      "picture": "spiderman_no_way_home_trailer.jpg"
+    },
+    {
+      "id": 2,
+      "headline": "'Avatar 2' Wraps Up Filming",
+      "details": "Director James Cameron announced that filming for 'Avatar 2' has been completed. The highly anticipated sequel promises groundbreaking visuals and immersive storytelling. Fans can't wait to return to the world of Pandora when the film hits theaters next year.",
+      "date": "2024-03-15",
+      "picture": "avatar_2_filming_wrap.jpg"
+    },
+    {
+      "id": 3,
+      "headline": "Oscar Nominations Announced",
+      "details": "The nominations for the 96th Academy Awards have been revealed, with several standout films receiving recognition. 'The Power of the Dog,' 'Dune,' and 'Belfast' lead the pack with multiple nominations across various categories. The ceremony is set to take place on April 25th.",
+      "date": "2024-03-10",
+      "picture": "oscar_nominations.jpg"
+    },
+    {
+      "id": 4,
+      "headline": "New 'Indiana Jones' Movie in Production",
+      "details": "After years of anticipation, production has begun on the fifth installment of the 'Indiana Jones' franchise. Harrison Ford reprises his iconic role as the adventurous archaeologist, with James Mangold directing. The film is scheduled for release in July 2025.",
+      "date": "2024-03-05",
+      "picture": "indiana_jones_production.jpg"
+    },
+    {
+      "id": 5,
+      "headline": "Disney Announces Live-Action Remake of 'The Lion King'",
+      "details": "Disney has revealed plans for a live-action remake of its animated classic 'The Lion King.' Jon Favreau, who directed the 2019 CGI adaptation, is set to return for the new project. Fans are curious to see how the beloved story will be reimagined for the big screen once again.",
+      "date": "2024-02-28",
+      "picture": "lion_king_live_action.jpg"
+    }
+  ]
+  
