@@ -1,0 +1,10 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: white; /* Change the color of the buttons */
+  font-size: 20px; /* Adjust the font size */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: blue; /* Change the hover color */
+}

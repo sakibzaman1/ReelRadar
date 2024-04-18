@@ -9,7 +9,9 @@ import 'swiper/css/pagination';
 // import './styles.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
+import './swiper.css'
+import 'swiper/css/navigation';
 
 
 const Featured = () => {
@@ -18,10 +20,11 @@ const Featured = () => {
         <Swiper
           slidesPerView={3}
           spaceBetween={30}
+          navigation={true} // Enable navigation
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Navigation]}
           className="mySwiper"
         >
           <SwiperSlide className='border-r-2 shadow-2xl'><img className='h-60 mx-auto' src="https://www.movieposters.com/cdn/shop/files/fall_guy_ver2_480x.progressive.jpg?v=1710786989" alt="" /></SwiperSlide>

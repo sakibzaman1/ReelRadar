@@ -8,6 +8,7 @@ import DashboardLayout from '../Layouts/DashboardLayout/DashboardLayout';
 import UserProfile from '../Dashboard/Profile/User/UserProfile';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
+import FilmDetails from '../Pages/FilmDetails/FilmDetails';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/filmDetails/:id',
+          element: <FilmDetails></FilmDetails>,
+          loader: ({params})=> fetch(`https://reel-radar-server.vercel.app/towatch/${params.id}`)
         },
         {
           path: '/userProfile',

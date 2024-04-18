@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 // import './styles.css';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 
 const Upcoming = () => {
@@ -17,10 +17,15 @@ const Upcoming = () => {
         <>
           <Swiper
             direction={'vertical'}
+            speed={3000}
             pagination={{
-              clickable: true,
+              dynamicBullets: true,
             }}
-            modules={[Pagination]}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            modules={[Pagination, Autoplay]}
             className="mySwiper  w-[80%] h-[600px] border-t-8 border-sky-400"
           >
             <SwiperSlide><img src="https://www.movieposters.com/cdn/shop/files/tarot_nxigdvu5_480x.progressive.jpg?v=1708723278" alt="" /></SwiperSlide>
