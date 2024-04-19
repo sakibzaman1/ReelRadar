@@ -9,6 +9,7 @@ import UserProfile from '../Dashboard/Profile/User/UserProfile';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import FilmDetails from '../Pages/FilmDetails/FilmDetails';
+import Watchlist from '../Pages/Watchlist/Watchlist';
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: '/watchlist/:email',
+          element: <Watchlist></Watchlist>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/watchlist`)
         },
         {
           path: '/filmDetails/:id',

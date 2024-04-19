@@ -66,9 +66,11 @@ const Navbar = () => {
         <span className="badge badge-xs badge-primary indicator-item"></span>
       </div>
     </button> </li></Link>
-     <Link> <li className='navLinks '>Watchlist</li></Link>
+     <Link to={`/watchlist/${user?.email}`}> <li className='navLinks '>Watchlist</li></Link>
        <Link> <li className='navLinks'>Subscribe</li></Link>
-       <Link to='/signin'> <li className='navLinks '>Sign in</li></Link>
+       {
+        user? '' : <Link to='/signin'> <li className='navLinks '>Sign in</li></Link>
+       }
     </ul>
     </>
     const mobileNavOptions = <>

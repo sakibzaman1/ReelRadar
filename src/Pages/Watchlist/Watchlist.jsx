@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -18,19 +20,14 @@ import { FaInfoCircle } from "react-icons/fa";
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
 
-const ToWatch = () => {
 
-    const [toWatch, setToWatch] = useState();
-
-    useEffect(()=> {
-        fetch(`https://reel-radar-server.vercel.app/towatch`)
-        .then(res=> res.json())
-        .then(data=> setToWatch(data))
-    },[]);
-
+const Watchlist = () => {
+    const watchlist = useLoaderData();
+    console.log(watchlist)
     return (
-        <>
-        <Swiper
+        <div className='m-10'>
+            <h1>Watchlist of {watchlist.length}</h1>
+            <Swiper
           slidesPerView={6}
           spaceBetween={30}
           breakpoints={{
@@ -55,7 +52,7 @@ const ToWatch = () => {
           <div className=''>
             
           {
-                toWatch?.map(watch=> 
+                watchlist?.map(watch=> 
                 
 
                   <SwiperSlide className='bg-gray-900 py-4 px-2 ' key={watch._id} watch={watch}>
@@ -72,8 +69,8 @@ const ToWatch = () => {
                   </div>
                   <CiStar size={30} color='skyblue'  className='ml-10'></CiStar>
                   </div>
-                  <h1 className='text-center text-3xl lg:text-base lg:text-start h-6'>{watch?.title}</h1>
-                  <button className='btn btn-ghost rounded-none bg-gray-800 text-sky-400'><AiOutlinePlusSquare size={20}></AiOutlinePlusSquare>Add to Watchlist</button>
+                  <h1 className='text-center text-3xl lg:text-base lg:text-start h-16'>{watch?.title}</h1>
+                  {/* <button className='btn btn-ghost rounded-none bg-gray-800 text-sky-400'><AiOutlinePlusSquare size={20}></AiOutlinePlusSquare>Add to Watchlist</button> */}
                   <div className='flex items-center justify-between'>
                   <div className='flex gap-2 items-center'>
                   <IoIosPlay size={20}></IoIosPlay>
@@ -91,8 +88,8 @@ const ToWatch = () => {
           
           </div>
         </Swiper>
-      </>
+        </div>
     );
 };
 
-export default ToWatch;
+export default Watchlist;
