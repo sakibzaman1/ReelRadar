@@ -46,7 +46,7 @@ const AuthProvider = ({children}) => {
     const signOutUser = () => {
         setLoading(true);
         Swal.fire({
-            title: '<strong>Logged Out</strong>',
+            title: '<strong>Signed Out</strong>',
             icon: 'info',
             html:
                 'How Was Your Experience?',

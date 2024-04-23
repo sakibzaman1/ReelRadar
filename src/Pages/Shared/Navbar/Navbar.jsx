@@ -7,6 +7,7 @@ import defaultProfile from '../../../assets/default-profile.jpg'
 import { FaAnglesRight } from "react-icons/fa6";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { AuthContext } from '../../../Providers/AuthProvider';
+import Search from './Search/Search';
 
 const Navbar = () => {
 
@@ -42,7 +43,7 @@ const Navbar = () => {
     <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
       {/* Sidebar content here */}
-      <li><Link>Homepage</ Link></li>
+      <li><Link to='/'>Homepage</ Link></li>
         <li><Link>Movies</Link></li>
         <li><Link>Series</    Link></li>
         <li><Link>TV Shows</    Link></li>
@@ -104,12 +105,7 @@ const Navbar = () => {
     {menuOptions}
     </div>
     <div className="form-control">
-    <div className='hidden lg:flex justify-center items-center'>
-    <input type="text" placeholder="Search" className="input bg-transparent input-bordered w-24 md:w-auto lg:w-48 h-10 rounded-lg" />
-      <button className="btn btn-ghost btn-circle -ml-10">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-    </button>
-    </div>
+    <Search></Search>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">
@@ -131,8 +127,8 @@ const Navbar = () => {
       </div>
       <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
         <li>
-          <Link to='/userProfile' className="justify-between">
-            Profile
+          <Link to='dashboard' className="justify-between">
+            Dashboard
             <span className="badge">New</span>
           </Link>
         </li>

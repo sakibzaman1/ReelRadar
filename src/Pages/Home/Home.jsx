@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import ToWatch from './ToWatch/ToWatch';
 import Updates from './Updates/Updates';
+import TopList from './TopList/TopList';
 
 const Home = () => {
     return (
@@ -18,6 +19,11 @@ const Home = () => {
         <div className='py-10'>
         <h1 className="text-5xl my-10 text-center">News & Updates</h1>
         <Updates></Updates>
+        </div>
+        <div className='divider'></div>
+        <div>
+        <h1 className="text-5xl my-10 text-center lg:text-start">Top Listed Films</h1>
+            <TopList></TopList>
         </div>
        </div>
     );

@@ -10,6 +10,8 @@ import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import ErrorPage from '../Components/ErrorPage/ErrorPage';
 import FilmDetails from '../Pages/FilmDetails/FilmDetails';
 import Watchlist from '../Pages/Watchlist/Watchlist';
+import AdminProfile from '../Dashboard/Profile/Admin/AdminProfile';
+import Dashboard from '../Dashboard/Profile/Dashboard';
 
 const router = createBrowserRouter([
     {
@@ -31,20 +33,31 @@ const router = createBrowserRouter([
         },
         {
           path: '/watchlist/:email',
-          element: <Watchlist></Watchlist>,
-          loader: ()=> fetch(`https://reel-radar-server.vercel.app/watchlist`)
+          element: <PrivateRoute><Watchlist></Watchlist></PrivateRoute>,
+          loader: ()=> fetch(`http://localhost:5000/watchlist`)
         },
         {
           path: '/filmDetails/:id',
           element: <FilmDetails></FilmDetails>,
-          loader: ({params})=> fetch(`https://reel-radar-server.vercel.app/towatch/${params.id}`)
+          loader: ({params})=> fetch(`http://localhost:5000/towatch/${params.id}`)
         },
-        {
-          path: '/userProfile',
-          element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
-        }
       ]
     },
+    {
+      path: 'dashboard',
+      element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+      children: [
+        {
+          path: 'userProfile',
+          element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        },
+        {
+          path: 'adminProfile',
+          element: <AdminProfile></AdminProfile>
+        }
+      ]
+    }
+   
     // {
     //   path: 'dashboard',
     //   element: <DashboardLayout></DashboardLayout>,

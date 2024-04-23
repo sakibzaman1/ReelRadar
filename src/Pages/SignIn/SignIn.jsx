@@ -90,7 +90,7 @@ const SignIn = () => {
                 <title>Reel Radar | SIGN IN</title>
             </Helmet>
             <div className="hero lg:p-10 font-Roboto">
-                <div className="hero-content p-0 flex-col lg:flex-row-reverse lg:items-center lg:justify-around">
+                <div className="hero-content p-0 flex-col-reverse lg:flex-row-reverse lg:items-center lg:justify-around">
                     <div className="text-center flex flex-col lg:justify-center items-end lg:text-right lg:pl-10 lg:w-[40%] p-10">
                         <img className='w-80' src='https://i.ibb.co/RBnQK2s/Reel-Radar-no-bg.png' alt="" />
                         
@@ -101,7 +101,7 @@ const SignIn = () => {
                     </div>
                     <div className="divider lg:divider-horizontal"><HiLogin size={50}></HiLogin></div> 
                     <div className="card lg:w-[60%] flex-shrink-0 max-w-lg shadow-2xl ">
-                        <form onSubmit={handleSignIn} className="card-body">
+                        <form onSubmit={handleSignIn} className="card-body mt-10 lg:mt-0">
                         <h1 className="text-5xl font-bold text-center mb-10">Sign in now!</h1>
                             <div className="form-control">
                                 <label className="label">

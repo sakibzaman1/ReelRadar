@@ -115,7 +115,7 @@ const Register = () => {
                   <title>Reel Radar | REGISTRATION</title>
               </Helmet>
         <div className="hero lg:p-10">
-          <div className="hero-content flex-col lg:flex-row lg:justify-around lg:items-start">
+          <div className="hero-content p-0 flex-col-reverse lg:flex-row lg:justify-around lg:items-start">
             <div className=" flex flex-col lg:justify-center lg:items-center text-center lg:text-center lg:w-[40%] p-10">
               <img className="w-80" src='https://i.ibb.co/RBnQK2s/Reel-Radar-no-bg.png' alt="" />
   
@@ -128,7 +128,7 @@ const Register = () => {
             </div>
             <div className="divider lg:divider-horizontal"><MdAccountCircle size={50}></MdAccountCircle></div>
             <div className="card lg:w-[60%]  flex-shrink-0 max-w-lg shadow-2xl ">
-              <form onSubmit={handleRegister} className="card-body">
+              <form onSubmit={handleRegister} className="card-body mt-10 lg:mt-0">
                 <h1 className="text-5xl font-bold text-center mb-10">
                   Register Now!
                 </h1>

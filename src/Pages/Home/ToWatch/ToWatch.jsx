@@ -23,7 +23,7 @@ const ToWatch = () => {
     const [toWatch, setToWatch] = useState();
 
     useEffect(()=> {
-        fetch(`https://reel-radar-server.vercel.app/towatch`)
+        fetch(`http://localhost:5000/towatch`)
         .then(res=> res.json())
         .then(data=> setToWatch(data))
     },[]);
@@ -63,6 +63,7 @@ const ToWatch = () => {
                     
                     <Link to={`/filmDetails/${watch?._id}`}>
                     <img className='mx-auto h-96 lg:h-60 lg:w-30 mb-6' src={watch?.picture} alt="" />
+                    </Link>
                   
                   <div className='text-center space-y-8'>
                   <div className='flex items-center justify-around gap-4 mb-6'>
@@ -79,10 +80,12 @@ const ToWatch = () => {
                   <IoIosPlay size={20}></IoIosPlay>
                   <p className='cursor-pointer'>Trailer</p>
                   </div>
+                  <Link to={`/filmDetails/${watch?._id}`}>
                   <FaInfoCircle className='cursor-pointer'></FaInfoCircle>
-                  </div>
-                  </div>
                   </Link>
+                  </div>
+                  </div>
+                 
                   
                   </SwiperSlide>
 

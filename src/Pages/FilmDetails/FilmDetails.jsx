@@ -17,12 +17,33 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useLoaderData } from "react-router-dom";
 import { StarBorder } from "@mui/icons-material";
 
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
 import Modal from "@mui/material/Modal";
-import Rating from "react-rating";
+// import Rating from "react-rating";
 import StarRatings from "react-star-ratings";
+
+import Rating from "@mui/material/Rating";
+import Box from "@mui/material/Box";
+import StarIcon from "@mui/icons-material/Star";
+
+const labels = {
+  0.5: "Useless",
+  1: "Useless+",
+  1.5: "Poor",
+  2: "Poor+",
+  2.5: "Ok",
+  3: "Ok+",
+  3.5: "Good",
+  4: "Good+",
+  4.5: "Excellent",
+  5: "Excellent+",
+};
+function getLabelText(value) {
+  return `${value} Star${value !== 1 ? "s" : ""}, ${labels[value]}`;
+}
+
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -61,7 +82,7 @@ const FilmDetails = () => {
   const twitterShareUrl = "https://twitter.com/";
   const pinterestShareUrl = "https://www.pinterest.com/";
 
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const loadedFilm = useLoaderData();
   console.log(loadedFilm);
@@ -74,6 +95,9 @@ const FilmDetails = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [value, setValue] = React.useState(2);
+  const [hover, setHover] = React.useState(-1);
+
   const handleAddToWatchlist = () => {
     const myAddedFilm = {
       id: loadedFilm?._id,
@@ -83,10 +107,10 @@ const FilmDetails = () => {
       rating: loadedFilm?.rating,
       duration: loadedFilm?.duration,
       genre: loadedFilm?.genre,
-      email: user?.email
+      email: user?.email,
     };
 
-    fetch("https://reel-radar-server.vercel.app/watchlist", {
+    fetch("http://localhost:5000/watchlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -137,7 +161,10 @@ const FilmDetails = () => {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton onClick={handleAddToWatchlist} aria-label="add to favorites">
+          <IconButton
+            onClick={handleAddToWatchlist}
+            aria-label="add to favorites"
+          >
             <FavoriteIcon className="text-red-600" />
           </IconButton>
 
@@ -162,14 +189,37 @@ const FilmDetails = () => {
                     Give Ratings
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <StarRatings
-                      numberOfStars={10}
-                      starHoverColor="yellow"
-                      starRatedColor="orange"
-                      rating={loadedFilm?.rating}
-                      starDimension="20px"
-                      starSpacing="6px"
-                    />
+                    <Box
+                      sx={{
+                        width: 200,
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Rating
+                        name="hover-feedback"
+                        value={value}
+                        precision={0.5}
+                        getLabelText={getLabelText}
+                        onChange={(event, newValue) => {
+                          setValue(newValue);
+                        }}
+                        onChangeActive={(event, newHover) => {
+                          setHover(newHover);
+                        }}
+                        emptyIcon={
+                          <StarIcon
+                            style={{ opacity: 0.55 }}
+                            fontSize="inherit"
+                          />
+                        }
+                      />
+                      {value !== null && (
+                        <Box sx={{ ml: 2 }}>
+                          {labels[hover !== -1 ? hover : value]}
+                        </Box>
+                      )}
+                    </Box>
                   </Typography>
                 </Box>
               </Modal>
@@ -235,11 +285,26 @@ const FilmDetails = () => {
       <div class="lg:w-[70%] pt-10">
         <iframe
           width="100%"
-          height="500"
+          height="350"
           src="https://www.youtube.com/embed/qtRKdVHc-cE"
           frameborder="0"
           allowfullscreen
         ></iframe>
+        <div>
+          <h1>Cast Members</h1>
+        <div className="flex gap-4">
+          <img className="border-2    w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+          <img className="border-2  w-10" src="" alt="" />
+        </div>
+        </div>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ const Watchlist = () => {
     console.log(watchlist)
     return (
         <div className='m-10'>
-            <h1>Watchlist of {watchlist.length}</h1>
+            
             <Swiper
           slidesPerView={6}
           spaceBetween={30}
@@ -70,7 +70,7 @@ const Watchlist = () => {
                   <CiStar size={30} color='skyblue'  className='ml-10'></CiStar>
                   </div>
                   <h1 className='text-center text-3xl lg:text-base lg:text-start h-16'>{watch?.title}</h1>
-                  {/* <button className='btn btn-ghost rounded-none bg-gray-800 text-sky-400'><AiOutlinePlusSquare size={20}></AiOutlinePlusSquare>Add to Watchlist</button> */}
+                  <button className='btn btn-ghost rounded-none bg-gray-800 text-sky-400'><AiOutlinePlusSquare size={20}></AiOutlinePlusSquare>Remove</button>
                   <div className='flex items-center justify-between'>
                   <div className='flex gap-2 items-center'>
                   <IoIosPlay size={20}></IoIosPlay>
