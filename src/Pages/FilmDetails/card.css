@@ -1,8 +1,7 @@
-.css-1ri6ub7-MuiPaper-root-MuiCard-root{
-    background-color: blue;
-    color: white;
+.rotate-90 {
+    display: inline-block;
+    transform: rotate(270deg);
+    /* Adjust the position */
     
-}
-/* .css-1ri6ub7-MuiPaper-root-MuiCard-root {
-    fill: white;
-} */
+  };
+ 

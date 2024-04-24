@@ -12,6 +12,7 @@ import FilmDetails from '../Pages/FilmDetails/FilmDetails';
 import Watchlist from '../Pages/Watchlist/Watchlist';
 import AdminProfile from '../Dashboard/Profile/Admin/AdminProfile';
 import Dashboard from '../Dashboard/Profile/Dashboard';
+import Payment from '../Dashboard/Profile/User/Payment';
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
           path: 'userProfile',
           element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        },
+        {
+          path: 'payment',
+          element: <Payment></Payment>
         },
         {
           path: 'adminProfile',

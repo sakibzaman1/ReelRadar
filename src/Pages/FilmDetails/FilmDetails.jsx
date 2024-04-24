@@ -55,6 +55,7 @@ import {
 } from "react-share";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FcFilm, FcFilmReel } from "react-icons/fc";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 const style = {
   position: "absolute",
@@ -111,6 +112,8 @@ const FilmDetails = () => {
       duration: loadedFilm?.duration,
       genre: loadedFilm?.genre,
       email: user?.email,
+      cast: loadedFilm?.cast,
+      type: loadedFilm?.type
     };
 
     fetch("https://reel-radar-server.vercel.app/watchlist", {
@@ -230,12 +233,12 @@ const FilmDetails = () => {
           </CardContent>
         </Collapse> */}
 
-        <div className="mt-8 ml-4 justify-start flex gap-4">
+        <div className="mt-8 ml-4 justify-start items-center flex gap-4">
           <FcFilmReel></FcFilmReel>
           <h2>{loadedFilm?.type}</h2>
         </div>
 
-        <div className="mt-8 ml-4 justify-start flex gap-4">
+        <div className="mt-8 ml-4 justify-start items-center flex gap-4">
           <FcFilm></FcFilm>
           {loadedFilm?.genre?.map((genre) => (
             <h2>{genre}</h2>
@@ -323,23 +326,28 @@ const FilmDetails = () => {
             </div>
           </div>
         </div>
-        <div className="mt-4">
-          <small className="">Cast & Crew</small>
-          <div className="mt-6 grid grid-cols-3 text-center gap-10">
+        <div className="mt-10">
+          <div className="flex items-center justify-between">
+          <small className="-ml-[40px] rotate-90 text-xl px-2 py-2 bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-60">Cast & Crew</small>
+
+          <div className="mt-6 grid grid-cols-4 text-center items-center gap-10">
             {loadedFilm?.cast?.map((actor) => (
-              <div className=" ">
+              <div className=" flex flex-col items-center">
                 <img
-                  className="w-48 h-48 rounded-full btn btn-ghost btn-circle avatar"
+                  className="w-28 h-28 rounded-full btn btn-ghost btn-circle avatar"
                   src={actor?.picture}
                   alt=""
                 />
                 <button className="btn btn-ghost">
-                  <h1 className="font-bold text-xl flex justify-center mx-auto items-center text-center mt-2">
+                  <h1 className="font-bold text-lg w-60 flex justify-center mx-auto items-center text-center mt-2">
                     {actor?.name}
                   </h1>
                 </button>
               </div>
             ))}
+            <MdKeyboardDoubleArrowRight size={80} />
+          </div>
+          
           </div>
         </div>
       </div>

@@ -20,6 +20,8 @@ import { FaInfoCircle } from "react-icons/fa";
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
 
+import './watchlist.css'
+
 
 const Watchlist = () => {
     const watchlist = useLoaderData();
@@ -49,7 +51,7 @@ const Watchlist = () => {
           className="mySwiper"
           
         >
-          <div className=''>
+          <div className='grid grid-cols-6'>
             
           {
                 watchlist?.map(watch=> 
@@ -58,8 +60,8 @@ const Watchlist = () => {
                   <SwiperSlide className='bg-gray-900 py-4 px-2 ' key={watch._id} watch={watch}>
                     
                     
-                    <Link to={`/filmDetails/${watch?._id}`}>
-                    <img className='mx-auto h-96 lg:h-60 lg:w-30 mb-6' src={watch?.picture} alt="" />
+                    <Link to={`/filmDetails/${watch?.id}`}>
+                    <img className='mx-auto h-48 lg:h-48 lg:w-30 mb-2' src={watch?.picture} alt="" />
                   
                   <div className='text-center space-y-8'>
                   <div className='flex items-center justify-around gap-4 mb-6'>
@@ -69,7 +71,7 @@ const Watchlist = () => {
                   </div>
                   <CiStar size={30} color='skyblue'  className='ml-10'></CiStar>
                   </div>
-                  <h1 className='text-center text-3xl lg:text-base lg:text-start h-16'>{watch?.title}</h1>
+                  <h1 className='text-center text-3xl lg:text-base lg:text-start h-8'>{watch?.title}</h1>
                   <button className='btn btn-ghost rounded-none bg-gray-800 text-sky-400'><AiOutlinePlusSquare size={20}></AiOutlinePlusSquare>Remove</button>
                   <div className='flex items-center justify-between'>
                   <div className='flex gap-2 items-center'>

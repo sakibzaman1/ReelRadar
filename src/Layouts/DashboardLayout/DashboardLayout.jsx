@@ -73,33 +73,13 @@ const DashboardLayout = () => {
                     <NavLink>Favorites</NavLink>
                   </li>
                   <li>
-                    <NavLink>Movies</NavLink>
+                    <NavLink to='/dashboard/payment'>Payment</NavLink>
                   </li>
-                  <li>
-                    <NavLink>Series</NavLink>
-                  </li>
-                  <li>
-                    <NavLink>TV Shows</NavLink>
-                  </li>
-                  <li>
-                    <NavLink>Hollywood</NavLink>
-                  </li>
-                  <li>
-                    <NavLink>Bollywood</NavLink>
-                  </li>
-                  <li>
-                    <NavLink>IMDB top Rated</NavLink>
-                  </li>
-                  <li>
-                    <NavLink>Oscar Winning</NavLink>
-                  </li>
-                  <li>
-                    <NavLink>Bengali</NavLink>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
-            <div className="w-[80%] flex justify-center text-center mx-auto items-center">
+            <div className="w-[80%] flex justify-center text-center mx-auto mt-16 items-center">
               <Outlet></Outlet>
             </div>
           </div>
