@@ -5,7 +5,7 @@ const Updates = () => {
   const [updates, setUpdates] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/updates`)
+    fetch(`https://reel-radar-server.vercel.app/updates`)
       .then((res) => res.json())
       .then((data) => setUpdates(data));
   }, []);

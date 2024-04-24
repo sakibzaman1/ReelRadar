@@ -15,7 +15,9 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useLoaderData } from "react-router-dom";
-import { StarBorder } from "@mui/icons-material";
+import { QueueOutlined, StarBorder } from "@mui/icons-material";
+import NumbersRoundedIcon from "@mui/icons-material/NumbersRounded";
+import "./card.css";
 
 // import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -52,6 +54,7 @@ import {
   TwitterShareButton,
 } from "react-share";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { FcFilm, FcFilmReel } from "react-icons/fc";
 
 const style = {
   position: "absolute",
@@ -110,7 +113,7 @@ const FilmDetails = () => {
       email: user?.email,
     };
 
-    fetch("http://localhost:5000/watchlist", {
+    fetch("https://reel-radar-server.vercel.app/watchlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -132,8 +135,8 @@ const FilmDetails = () => {
   };
 
   return (
-    <div className="lg:flex justify-between items-center">
-      <Card sx={{ maxWidth: 345 }}>
+    <div className="lg:flex justify-between  mb-20">
+      <Card className="mt-6 p-2 bg-transparent" sx={{ maxWidth: 345 }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -161,74 +164,19 @@ const FilmDetails = () => {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon className="" />
+          </IconButton>
           <IconButton
             onClick={handleAddToWatchlist}
             aria-label="add to favorites"
           >
-            <FavoriteIcon className="text-red-600" />
+            <QueueOutlined></QueueOutlined>
           </IconButton>
 
-          <IconButton aria-label="share">
-            <div>
-              <Button onClick={handleOpen}>
-                {" "}
-                <StarBorder />
-              </Button>
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-              >
-                <Box sx={style}>
-                  <Typography
-                    id="modal-modal-title"
-                    variant="h6"
-                    component="h2"
-                  >
-                    Give Ratings
-                  </Typography>
-                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    <Box
-                      sx={{
-                        width: 200,
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
-                      <Rating
-                        name="hover-feedback"
-                        value={value}
-                        precision={0.5}
-                        getLabelText={getLabelText}
-                        onChange={(event, newValue) => {
-                          setValue(newValue);
-                        }}
-                        onChangeActive={(event, newHover) => {
-                          setHover(newHover);
-                        }}
-                        emptyIcon={
-                          <StarIcon
-                            style={{ opacity: 0.55 }}
-                            fontSize="inherit"
-                          />
-                        }
-                      />
-                      {value !== null && (
-                        <Box sx={{ ml: 2 }}>
-                          {labels[hover !== -1 ? hover : value]}
-                        </Box>
-                      )}
-                    </Box>
-                  </Typography>
-                </Box>
-              </Modal>
-            </div>
-          </IconButton>
-
-          <div>
+          <div className="ml-20">
             <IconButton
-              className=" flex justify-center  gap-4"
+              className=" flex justify-center  gap-6"
               aria-label="share"
             >
               <FacebookShareButton url={fbShareUrl}>
@@ -240,16 +188,16 @@ const FilmDetails = () => {
               <ShareIcon />
             </IconButton>
           </div>
-          <ExpandMore
+          {/* <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
           >
             <ExpandMoreIcon />
-          </ExpandMore>
+          </ExpandMore> */}
         </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
+        {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>Method:</Typography>
             <Typography paragraph>
@@ -280,30 +228,119 @@ const FilmDetails = () => {
               serve.
             </Typography>
           </CardContent>
-        </Collapse>
+        </Collapse> */}
+
+        <div className="mt-8 ml-4 justify-start flex gap-4">
+          <FcFilmReel></FcFilmReel>
+          <h2>{loadedFilm?.type}</h2>
+        </div>
+
+        <div className="mt-8 ml-4 justify-start flex gap-4">
+          <FcFilm></FcFilm>
+          {loadedFilm?.genre?.map((genre) => (
+            <h2>{genre}</h2>
+          ))}
+        </div>
       </Card>
       <div class="lg:w-[70%] pt-10">
-        <iframe
-          width="100%"
-          height="350"
-          src="https://www.youtube.com/embed/qtRKdVHc-cE"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-        <div>
-          <h1>Cast Members</h1>
-        <div className="flex gap-4">
-          <img className="border-2    w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
-          <img className="border-2  w-10" src="" alt="" />
+        <div className="flex justify-between">
+          <iframe
+            width="560"
+            height="315"
+            src={loadedFilm?.trailer}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+
+          <div>
+            <img
+              className="w-60 h-60"
+              src="https://i.ibb.co/dP6N7N4/Reel-Radar-Logo.png"
+              alt=""
+            />
+            <div className="flex items-center">
+              <h1 className="text-3xl">Rate This Film</h1>
+              <IconButton aria-label="share">
+                <div>
+                  <Button onClick={handleOpen}>
+                    {" "}
+                    <StarBorder fontSize="large" color="error" />
+                  </Button>
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Box sx={style}>
+                      <Typography
+                        id="modal-modal-title"
+                        variant="h6"
+                        component="h2"
+                      >
+                        Give Ratings
+                      </Typography>
+                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Box
+                          sx={{
+                            width: 300,
+                            display: "flex",
+                            alignItems: "center",
+                          }}
+                        >
+                          <Rating
+                            name="hover-feedback"
+                            value={value}
+                            precision={0.5}
+                            getLabelText={getLabelText}
+                            onChange={(event, newValue) => {
+                              setValue(newValue);
+                            }}
+                            onChangeActive={(event, newHover) => {
+                              setHover(newHover);
+                            }}
+                            emptyIcon={
+                              <StarIcon
+                                style={{ opacity: 0.55 }}
+                                fontSize="inherit"
+                              />
+                            }
+                          />
+                          {value !== null && (
+                            <Box sx={{ ml: 2 }}>
+                              {labels[hover !== -1 ? hover : value]}
+                            </Box>
+                          )}
+                        </Box>
+                      </Typography>
+                    </Box>
+                  </Modal>
+                </div>
+              </IconButton>
+            </div>
+          </div>
         </div>
+        <div className="mt-4">
+          <small className="">Cast & Crew</small>
+          <div className="mt-6 grid grid-cols-3 text-center gap-10">
+            {loadedFilm?.cast?.map((actor) => (
+              <div className=" ">
+                <img
+                  className="w-48 h-48 rounded-full btn btn-ghost btn-circle avatar"
+                  src={actor?.picture}
+                  alt=""
+                />
+                <button className="btn btn-ghost">
+                  <h1 className="font-bold text-xl flex justify-center mx-auto items-center text-center mt-2">
+                    {actor?.name}
+                  </h1>
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

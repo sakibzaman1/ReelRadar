@@ -34,12 +34,12 @@ const router = createBrowserRouter([
         {
           path: '/watchlist/:email',
           element: <PrivateRoute><Watchlist></Watchlist></PrivateRoute>,
-          loader: ()=> fetch(`http://localhost:5000/watchlist`)
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/watchlist`)
         },
         {
           path: '/filmDetails/:id',
           element: <FilmDetails></FilmDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/towatch/${params.id}`)
+          loader: ({params})=> fetch(`https://reel-radar-server.vercel.app/towatch/${params.id}`)
         },
       ]
     },

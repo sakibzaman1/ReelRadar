@@ -1,103 +1,172 @@
 [
-    {
-      "id": 1,
-      "title": "Inception",
-      "details": "A thief who enters the dreams of others to steal secrets from their subconscious.",
-      "rating": 8.8,
-      "year": 2010,
-      "genre": ["Action", "Adventure", "Sci-Fi"],
-      "duration": "2h 28min",
-      "picture": "inception.jpg"
-    },
-    {
-      "id": 2,
-      "title": "The Shawshank Redemption",
-      "details": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-      "rating": 9.3,
-      "year": 1994,
-      "genre": ["Drama"],
-      "duration": "2h 22min",
-      "picture": "shawshank_redemption.jpg"
-    },
-    {
-      "id": 3,
-      "title": "The Dark Knight",
-      "details": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-      "rating": 9.0,
-      "year": 2008,
-      "genre": ["Action", "Crime", "Drama"],
-      "duration": "2h 32min",
-      "picture": "dark_knight.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Fight Club",
-      "details": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
-      "rating": 8.8,
-      "year": 1999,
-      "genre": ["Drama"],
-      "duration": "2h 19min",
-      "picture": "fight_club.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Pulp Fiction",
-      "details": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-      "rating": 8.9,
-      "year": 1994,
-      "genre": ["Crime", "Drama"],
-      "duration": "2h 34min",
-      "picture": "pulp_fiction.jpg"
-    },
-    {
-      "id": 6,
-      "title": "Forrest Gump",
-      "details": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
-      "rating": 8.8,
-      "year": 1994,
-      "genre": ["Drama", "Romance"],
-      "duration": "2h 22min",
-      "picture": "forrest_gump.jpg"
-    },
-    {
-      "id": 7,
-      "title": "The Matrix",
-      "details": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
-      "rating": 8.7,
-      "year": 1999,
-      "genre": ["Action", "Sci-Fi"],
-      "duration": "2h 16min",
-      "picture": "matrix.jpg"
-    },
-    {
-      "id": 8,
-      "title": "The Lord of the Rings: The Return of the King",
-      "details": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
-      "rating": 8.9,
-      "year": 2003,
-      "genre": ["Action", "Adventure", "Drama"],
-      "duration": "3h 21min",
-      "picture": "lord_of_the_rings_return_of_the_king.jpg"
-    },
-    {
-      "id": 9,
-      "title": "The Godfather",
-      "details": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-      "rating": 9.2,
-      "year": 1972,
-      "genre": ["Crime", "Drama"],
-      "duration": "2h 55min",
-      "picture": "godfather.jpg"
-    },
-    {
-      "id": 10,
-      "title": "The Godfather: Part II",
-      "details": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
-      "rating": 9.0,
-      "year": 1974,
-      "genre": ["Crime", "Drama"],
-      "duration": "3h 22min",
-      "picture": "godfather_part_ii.jpg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Inception",
+    "details": "A thief who enters the dreams of others to steal secrets from their subconscious.",
+    "rating": 4.4,
+    "year": 2010,
+    "genre": ["Action", "Adventure", "Sci-Fi"],
+    "duration": "2h 28min",
+    "picture": "inception.jpg",
+    "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+    "cast": [
+      { "name": "Leonardo DiCaprio", "picture": "leonardo.jpg" },
+      { "name": "Joseph Gordon-Levitt", "picture": "joseph.jpg" },
+      { "name": "Ellen Page", "picture": "ellen.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 2,
+    "title": "The Shawshank Redemption",
+    "details": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "rating": 4.7,
+    "year": 1994,
+    "genre": ["Drama"],
+    "duration": "2h 22min",
+    "picture": "shawshank_redemption.jpg",
+    "trailer": "https://www.youtube.com/watch?v=6hB3S9bIaco",
+    "cast": [
+      { "name": "Tim Robbins", "picture": "tim.jpg" },
+      { "name": "Morgan Freeman", "picture": "morgan.jpg" },
+      { "name": "Bob Gunton", "picture": "bob.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 3,
+    "title": "The Dark Knight",
+    "details": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "rating": 4.5,
+    "year": 2008,
+    "genre": ["Action", "Crime", "Drama"],
+    "duration": "2h 32min",
+    "picture": "dark_knight.jpg",
+    "trailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+    "cast": [
+      { "name": "Christian Bale", "picture": "bale.jpg" },
+      { "name": "Heath Ledger", "picture": "ledger.jpg" },
+      { "name": "Aaron Eckhart", "picture": "aaron.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 4,
+    "title": "Fight Club",
+    "details": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
+    "rating": 4.4,
+    "year": 1999,
+    "genre": ["Drama"],
+    "duration": "2h 19min",
+    "picture": "fight_club.jpg",
+    "trailer": "https://www.youtube.com/watch?v=SUXWAEX2jlg",
+    "cast": [
+      { "name": "Brad Pitt", "picture": "brad.jpg" },
+      { "name": "Edward Norton", "picture": "norton.jpg" },
+      { "name": "Helena Bonham Carter", "picture": "helena.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 5,
+    "title": "Pulp Fiction",
+    "details": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "rating": 4.5,
+    "year": 1994,
+    "genre": ["Crime", "Drama"],
+    "duration": "2h 34min",
+    "picture": "pulp_fiction.jpg",
+    "trailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+    "cast": [
+      { "name": "John Travolta", "picture": "travolta.jpg" },
+      { "name": "Uma Thurman", "picture": "uma.jpg" },
+      { "name": "Samuel L. Jackson", "picture": "samuel.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 6,
+    "title": "Forrest Gump",
+    "details": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+    "rating": 4.4,
+    "year": 1994,
+    "genre": ["Drama", "Romance"],
+    "duration": "2h 22min",
+    "picture": "forrest_gump.jpg",
+    "trailer": "https://www.youtube.com/watch?v=bLvqoHBptjg",
+    "cast": [
+      { "name": "Tom Hanks", "picture": "hanks.jpg" },
+      { "name": "Robin Wright", "picture": "robin.jpg" },
+      { "name": "Gary Sinise", "picture": "gary.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 7,
+    "title": "The Matrix",
+    "details": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+    "rating": 4.4,
+    "year": 1999,
+    "genre": ["Action", "Sci-Fi"],
+    "duration": "2h 16min",
+    "picture": "matrix.jpg",
+    "trailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8",
+    "cast": [
+      { "name": "Keanu Reeves", "picture": "keanu.jpg" },
+      { "name": "Laurence Fishburne", "picture": "laurence.jpg" },
+      { "name": "Carrie-Anne Moss", "picture": "carrie.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 8,
+    "title": "The Lord of the Rings: The Return of the King",
+    "details": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+    "rating": 4.5,
+    "year": 2003,
+    "genre": ["Action", "Adventure", "Drama"],
+    "duration": "3h 21min",
+    "picture": "lord_of_the_rings_return_of_the_king.jpg",
+    "trailer": "https://www.youtube.com/watch?v=co9SNfJNDN8",
+    "cast": [
+      { "name": "Elijah Wood", "picture": "elijah.jpg" },
+      { "name": "Viggo Mortensen", "picture": "viggo.jpg" },
+      { "name": "Ian McKellen", "picture": "ian.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 9,
+    "title": "The Godfather",
+    "details": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+    "rating": 4.6,
+    "year": 1972,
+    "genre": ["Crime", "Drama"],
+    "duration": "2h 55min",
+    "picture": "godfather.jpg",
+    "trailer": "https://www.youtube.com/watch?v=sY1S34973zA",
+    "cast": [
+      { "name": "Marlon Brando", "picture": "marlon.jpg" },
+      { "name": "Al Pacino", "picture": "al.jpg" },
+      { "name": "James Caan", "picture": "james.jpg" }
+    ],
+    "type": "Movie"
+  },
+  {
+    "id": 10,
+    "title": "The Godfather: Part II",
+    "details": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+    "rating": 4.5,
+    "year": 1974,
+    "genre": ["Crime", "Drama"],
+    "duration": "3h 22min",
+    "picture": "godfather_part_ii.jpg",
+    "trailer": "https://www.youtube.com/watch?v=8PyZCUHWs6o",
+    "cast": [
+      { "name": "Al Pacino", "picture": "al.jpg" },
+      { "name": "Robert De Niro", "picture": "robert.jpg" },
+      { "name": "Robert Duvall", "picture": "duvall.jpg" }
+    ],
+    "type": "Movie"
+  }
+]

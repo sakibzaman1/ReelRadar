@@ -10,7 +10,7 @@ const Search = () => {
     // Fetch movie data from MongoDB
     // You can use fetch or any library like axios to fetch data
     // For simplicity, I'm assuming you have a function called fetchMoviesFromMongoDB
-    fetch(`http://localhost:5000/towatch`)
+    fetch(`https://reel-radar-server.vercel.app/towatch`)
         .then(res=> res.json())
         .then(data=> setMovies(data))
   }, []);

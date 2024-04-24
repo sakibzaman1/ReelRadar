@@ -23,7 +23,7 @@ const ToWatch = () => {
     const [toWatch, setToWatch] = useState();
 
     useEffect(()=> {
-        fetch(`http://localhost:5000/towatch`)
+        fetch(`https://reel-radar-server.vercel.app/towatch`)
         .then(res=> res.json())
         .then(data=> setToWatch(data))
     },[]);
