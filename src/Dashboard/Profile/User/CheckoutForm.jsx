@@ -65,23 +65,37 @@ const CheckoutForm = () => {
 
     return (
         <form onSubmit={handleSubmit}>
-        <CardElement
-          options={{
-            style: {
-              base: {
-                fontSize: '16px',
-                color: '#424770',
-                '::placeholder': {
-                  color: '#aab7c4',
-                },
-              },
-              invalid: {
-                color: '#9e2146',
-              },
-            },
-          }}
-        />
-        <button className='mt-10 btn btn-ghost' type="submit" disabled={!stripe}>
+  <CardElement
+  options={{
+    style: {
+      base: {
+        fontWeight: 600,
+        fontSize: '18px',
+        color: '#333',
+        '::placeholder': {
+          color: 'gray',
+        },
+        padding: '60px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        border: '1px solid #ccc',
+        backgroundColor: 'skyblue',
+        display: 'flex',
+        alignItems: 'center',
+        width: '50%', // Set the width to 100% or any desired value
+      },
+      invalid: {
+        color: '#d9534f',
+        border: '1px solid #d9534f',
+      },
+      complete: {
+        color: '#5cb85c',
+      },
+    },
+  }}
+/>
+
+        <button className='mx-auto text-xl mb-10 mt-6 px-2 py-2 bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-60' type="submit" disabled={!stripe}>
           Pay
         </button>
         <p className='text-red-500'>{errorMessage}</p>

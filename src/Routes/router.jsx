@@ -13,6 +13,11 @@ import Watchlist from '../Pages/Watchlist/Watchlist';
 import AdminProfile from '../Dashboard/Profile/Admin/AdminProfile';
 import Dashboard from '../Dashboard/Profile/Dashboard';
 import Payment from '../Dashboard/Profile/User/Payment';
+import ManageUsers from '../Dashboard/Profile/Admin/ManageUsers';
+import AddFilms from '../Dashboard/Profile/Admin/AddFilms';
+import UserWatchList from '../Dashboard/Profile/User/UserWatchList';
+import StreamNow from '../Dashboard/Profile/User/StreamNow';
+import Favorites from '../Dashboard/Profile/User/Favorites';
 
 const router = createBrowserRouter([
     {
@@ -53,13 +58,35 @@ const router = createBrowserRouter([
           element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>
         },
         {
+          path: 'watchlist',
+          element: <UserWatchList></UserWatchList>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/watchlist`)
+        },
+        {
+          path: 'streamNow',
+          element: <StreamNow></StreamNow>
+        },
+        {
+          path: 'favorites',
+          element: <Favorites></Favorites>
+        },
+        {
           path: 'payment',
           element: <Payment></Payment>
         },
         {
           path: 'adminProfile',
           element: <AdminProfile></AdminProfile>
-        }
+        },
+        {
+          path: 'manageUsers',
+          element: <ManageUsers></ManageUsers>
+        },
+        {
+          path: 'addFilms',
+          element: <AddFilms></AddFilms>
+        },
+
       ]
     }
    

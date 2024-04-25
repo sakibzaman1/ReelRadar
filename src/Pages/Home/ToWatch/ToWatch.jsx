@@ -34,6 +34,9 @@ const ToWatch = () => {
           slidesPerView={6}
           spaceBetween={30}
           breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
             425: {
               slidesPerView: 1,
             },

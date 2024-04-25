@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
-  const isAdmin = user?.email?.toLowerCase() === "sakibzaman20@gmail.com";
+  const isAdmin = user?.email?.toLowerCase() === "sakibzaman54@gmail.com";
   return (
     <div>
       <section>
@@ -14,7 +14,7 @@ const DashboardLayout = () => {
       </section>
       <section>
         {isAdmin ? (
-          <div className=" flex">
+          <div className=" lg:flex">
             <div className="card rounded-none lg:w-[20%] flex flex-col card-side bg-base-100 shadow-xl">
               <figure className="rounded-full">
                 <img className="w-40 mt-10 rounded-full" src={user?.photoURL} alt="Movie" />
@@ -29,13 +29,13 @@ const DashboardLayout = () => {
                 <ul className="menu p-4  text-base-content ">
                   {/* Sidebar content here */}
                   <li>
-                    <NavLink to='/dashboard/adminProfile'>Profile</NavLink>
+                    <NavLink to='/dashboard/adminProfile'>Home</NavLink>
                   </li>
                   <li>
-                    <NavLink>Manage Users</NavLink>
+                    <NavLink to='/dashboard/manageUsers'>Manage Users</NavLink>
                   </li>
                   <li>
-                    <NavLink>Add Films</NavLink>
+                    <NavLink to='/dashboard/addFilms'>Add Films</NavLink>
                   </li>
                 </ul>{" "}
               </div>
@@ -45,7 +45,7 @@ const DashboardLayout = () => {
             </div>
           </div>
         ) : (
-          <div className=" flex">
+          <div className=" lg:flex">
             <div className="card rounded-none lg:w-[20%] flex flex-col card-side bg-base-100 shadow-xl">
               <figure className="">
                 <img className="w-40 mt-10 rounded-full" src={user?.photoURL} alt="Movie" />
@@ -61,16 +61,16 @@ const DashboardLayout = () => {
                 <ul className="menu p-4  text-base-content">
                   {/* Sidebar content here */}
                   <li>
-                    <NavLink to='/dashboard/userProfile'>Profile</NavLink>
+                    <NavLink to='/dashboard/userProfile'>Home</NavLink>
                   </li>
                   <li>
-                    <NavLink>Homepage</NavLink>
+                    <NavLink to='/dashboard/watchlist'>Watchlist</NavLink>
                   </li>
                   <li>
-                    <NavLink>Watchlist</NavLink>
+                    <NavLink to='/dashboard/streamNow'>Stream Now</NavLink>
                   </li>
                   <li>
-                    <NavLink>Favorites</NavLink>
+                    <NavLink to='/dashboard/favorites'>Favorites</NavLink>
                   </li>
                   <li>
                     <NavLink to='/dashboard/payment'>Payment</NavLink>
@@ -79,7 +79,7 @@ const DashboardLayout = () => {
                 </ul>
               </div>
             </div>
-            <div className="w-[80%] flex justify-center text-center mx-auto mt-16 items-center">
+            <div className="w-[80%] flex mx-auto   text-center mt-16 ">
               <Outlet></Outlet>
             </div>
           </div>
