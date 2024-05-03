@@ -40,7 +40,7 @@ const DashboardLayout = () => {
                 </ul>{" "}
               </div>
             </div>
-            <div className="w-[80%] flex justify-center text-center mx-auto items-center">
+            <div className="w-[80%] flex justify-center text-center mx-auto mt-16">
              <Outlet></Outlet>
             </div>
           </div>

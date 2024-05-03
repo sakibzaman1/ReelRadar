@@ -29,7 +29,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 const Watchlist = () => {
   const {user} = useContext(AuthContext);
     const watchlist = useLoaderData();
-    const myWatchList = watchlist.filter(myList=> myList?.email.toLowerCase() === user?.email.toLowerCase())
+    const myWatchList = watchlist.filter(myList=> myList?.email === user?.email)
     const [watchList, refetch] = UseWatchlist();
     const axiosSecure = UseAxiosSecure();
 
@@ -95,7 +95,7 @@ const Watchlist = () => {
                       
                       <Link to={`/filmDetails/${watch?.id}`}>
                       <img className='mx-auto h-48 lg:h-48 lg:w-30 mb-2' src={watch?.picture} alt="" />
-                    
+                      </Link>
                     <div className='text-center space-y-8'>
                     <div className='flex items-center justify-around gap-4 mb-6'>
                     <div className='flex gap-2 items-center'>
@@ -114,7 +114,7 @@ const Watchlist = () => {
                     <FaInfoCircle className='cursor-pointer'></FaInfoCircle>
                     </div>
                     </div>
-                    </Link>
+                    
                     
                     </SwiperSlide>
   

@@ -68,7 +68,10 @@ const AuthProvider = ({children}) => {
 
     // Go to Top of window
 
-    const goToTop = () => window.scrollTo(0,0);
+    const goToTop = () =>  window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling behavior
+    });;
 
     // observing the user
 

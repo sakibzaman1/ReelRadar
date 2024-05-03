@@ -168,5 +168,182 @@
       { "name": "Robert Duvall", "picture": "duvall.jpg" }
     ],
     "type": "Movie"
-  }
+  },
+  {
+    "id": 11,
+    "title": "13 Reasons Why",
+    "details": "High school student Clay Jensen lands in the center of a series of heartbreaking mysteries set in motion by a friend's tragic suicide.",
+    "rating": 4.5,
+    "year": 2017,
+    "genre": ["Crime", "Drama"],
+    "duration": "4 Seasons",
+    "picture": "https://dx35vtwkllhj9.cloudfront.net/netflix/evergreen-resource-site/images/hub/us/tout-13_reasons_why.jpg",
+    "trailer": "https://www.youtube.com/embed/QkT-HIMSrRk?si=f2WiMiyoROyYJUS6",
+    "cast": [
+      { "name": "Dylan Minnette", "picture": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSPrVfn5liyqN0GmUPyKeerDQ1vbH_Q_CZgC-4hHidgTuowEC7j" },
+      { "name": "Katherine Langford", "picture": "https://images.perthnow.com.au/publication/B882028050Z/1633335291806_GAB3GDDOF.1-0.jpg?imwidth=668&impolicy=pn_v3" },
+      { "name": "Brandon Flynn", "picture": "https://ntvb.tmsimg.com/assets/assets/982675_v9_bb.jpg" }
+    ],
+    "type": "Series"
+  },
+  {
+    "id": 12,
+    "title": "Stranger Things",
+    "details": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+    "rating": 4.8,
+    "year": 2016,
+    "genre": ["Drama", "Fantasy", "Horror"],
+    "duration": "4 Seasons",
+    "picture": "https://images-na.ssl-images-amazon.com/images/I/91-zG4%2BsfAL.jpg",
+    "trailer": "https://www.youtube.com/embed/XWxyRG_tckY?si=NsF3eNEKRqyDh-qU",
+    "cast": [
+        {"name": "Winona Ryder", "picture": "https://cdn.britannica.com/75/208675-050-BA5B8C3B/Winona-Ryder-2010.jpg"},
+        {"name": "Millie Bobby Brown", "picture": "https://media.gettyimages.com/photos/millie-bobby-brown-attends-the-louis-vuitton-paris-fashion-week-in-picture-id1251753866?s=2048x2048"},
+        {"name": "David Harbour", "picture": "https://www.indiewire.com/wp-content/uploads/2020/02/Stranger-Things-Hopper-David-Harbour.jpg"}
+    ],
+    "type": "Series"
+},
+
+  {
+    "id": 13,
+    "title": "The Crown",
+    "details": "Follows the political rivalries and romance of Queen Elizabeth II's reign and the events that shaped the second half of the twentieth century.",
+    "rating": 4.7,
+    "year": 2016,
+    "genre": ["Biography", "Drama", "History"],
+    "duration": "4 Seasons",
+    "picture": "https://m.media-amazon.com/images/I/91yF9RqLr3L._AC_SY741_.jpg",
+    "trailer": "https://www.youtube.com/embed/ME2umFQ_xBA?si=3FukkSYqRzGAgBdE",
+    "cast": [
+        {"name": "Olivia Colman", "picture": "https://media1.popsugar-assets.com/files/thumbor/MwzrFQhXrV-0lrAzk0XkLDnBqfg/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/10/05/860/n/1922283/eb508bc7b759c94ad0d3b9.61117113_/i/Olivia-Colman-Interview-About-The-Crown.jpg"},
+        {"name": "Tobias Menzies", "picture": "https://www.biography.com/.image/t_share/MTc0MTQ1MjM0MzI3OTI5NjA5/gettyimages-1202113892-square.jpg"},
+        {"name": "Josh O'Connor", "picture": "https://www.telegraph.co.uk/content/dam/tv/2021/11/07/TELEMMGLPICT000284708865_trans_NvBQzQNjv4BqAwu_IWWCX7RSlk-V2rnJwcQJwlYOsOwY6ZU5AnIQUJc.jpeg?imwidth=450"}
+    ],
+    "type": "Series"
+},
+{
+  "id": 14,
+  "title": "Breaking Bad",
+  "details": "A high school chemistry teacher turned methamphetamine manufacturer partners with a former student to create and sell the drug.",
+  "rating": 4.9,
+  "year": 2008,
+  "genre": ["Crime", "Drama", "Thriller"],
+  "duration": "5 Seasons",
+  "picture": "https://m.media-amazon.com/images/I/71XPx9X6GqL._AC_SL1500_.jpg",
+  "trailer": "https://www.youtube.com/embed/HhesaQXLuRY?si=V6dV4Y2GQkqhEfgt",
+  "cast": [
+      {"name": "Bryan Cranston", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bryan_Cranston_by_Gage_Skidmore_2.jpg/1200px-Bryan_Cranston_by_Gage_Skidmore_2.jpg"},
+      {"name": "Aaron Paul", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Aaron_Paul_2014_PaleyFest.jpg/1200px-Aaron_Paul_2014_PaleyFest.jpg"},
+      {"name": "Anna Gunn", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Anna_Gunn_at_the_2013_PaleyFest.jpg/1200px-Anna_Gunn_at_the_2013_PaleyFest.jpg"}
+  ],
+  "type": "Series"
+},
+
+{
+  "id": 15,
+  "title": "Game of Thrones",
+  "details": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
+  "rating": 4.7,
+  "year": 2011,
+  "genre": ["Action", "Adventure", "Drama"],
+  "duration": "8 Seasons",
+  "picture": "https://m.media-amazon.com/images/I/81J1pbrFD9L._AC_SY741_.jpg",
+  "trailer": "https://www.youtube.com/embed/gcTkNV5Vg1E",
+  "cast": [
+      {"name": "Emilia Clarke", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emilia_Clarke_by_Gage_Skidmore_2.jpg/1200px-Emilia_Clarke_by_Gage_Skidmore_2.jpg"},
+      {"name": "Kit Harington", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Kit_Harington_by_Gage_Skidmore_3.jpg/1200px-Kit_Harington_by_Gage_Skidmore_3.jpg"},
+      {"name": "Peter Dinklage", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Peter_Dinklage_by_Gage_Skidmore_2.jpg/1200px-Peter_Dinklage_by_Gage_Skidmore_2.jpg"}
+  ],
+  "type": "Series"
+},
+{
+  "id": 16,
+  "title": "Friends",
+  "details": "Follows the personal and professional lives of six twenty to thirty-something-year-old friends living in Manhattan.",
+  "rating": 4.8,
+  "year": 1994,
+  "genre": ["Comedy", "Romance"],
+  "duration": "10 Seasons",
+  "picture": "https://m.media-amazon.com/images/I/71MVQqKRq3L._AC_SY679_.jpg",
+  "trailer": "https://www.youtube.com/embed/hDNNmeeJs1Q",
+  "cast": [
+      {"name": "Jennifer Aniston", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Jennifer_Aniston_-_2008.jpg/1200px-Jennifer_Aniston_-_2008.jpg"},
+      {"name": "Courteney Cox", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Courteney_Cox_1995.jpg/1200px-Courteney_Cox_1995.jpg"},
+      {"name": "Matthew Perry", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Matthew_Perry_2013_%28Straighten_Crop%29.jpg/1200px-Matthew_Perry_2013_%28Straighten_Crop%29.jpg"}
+  ],
+  "type": "Series"
+},
+{
+  "id": 17,
+  "title": "The Office (US)",
+  "details": "A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.",
+  "rating": 4.7,
+  "year": 2005,
+  "genre": ["Comedy"],
+  "duration": "9 Seasons",
+  "picture": "https://m.media-amazon.com/images/I/71vd7W+g-KL._AC_SY679_.jpg",
+  "trailer": "https://www.youtube.com/embed/USkU8F8-eDE",
+  "cast": [
+      {"name": "Steve Carell", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Steve_Carell_in_2010.jpg/1200px-Steve_Carell_in_2010.jpg"},
+      {"name": "Rainn Wilson", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Rainn_Wilson.jpg/1200px-Rainn_Wilson.jpg"},
+      {"name": "John Krasinski", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/John_Krasinski_by_Gage_Skidmore.jpg/1200px-John_Krasinski_by_Gage_Skidmore.jpg"}
+  ],
+  "type": "Series"
+},
+{
+  "id": 18,
+  "title": "Stranger Things",
+  "details": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+  "rating": 4.8,
+  "year": 2016,
+  "genre": ["Drama", "Fantasy", "Horror"],
+  "duration": "4 Seasons",
+  "picture": "https://images-na.ssl-images-amazon.com/images/I/91-zG4%2BsfAL.jpg",
+  "trailer": "https://www.youtube.com/embed/XWxyRG_tckY",
+  "cast": [
+      {"name": "Winona Ryder", "picture": "https://cdn.britannica.com/75/208675-050-BA5B8C3B/Winona-Ryder-2010.jpg"},
+      {"name": "Millie Bobby Brown", "picture": "https://media.gettyimages.com/photos/millie-bobby-brown-attends-the-louis-vuitton-paris-fashion-week-in-picture-id1251753866?s=2048x2048"},
+      {"name": "David Harbour", "picture": "https://www.indiewire.com/wp-content/uploads/2020/02/Stranger-Things-Hopper-David-Harbour.jpg"}
+  ],
+  "type": "Series"
+},
+{
+  "id": 19,
+  "title": "The Mandalorian",
+  "details": "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+  "rating": 4.8,
+  "year": 2019,
+  "genre": ["Action", "Adventure", "Fantasy"],
+  "duration": "2 Seasons",
+  "picture": "https://m.media-amazon.com/images/I/81zG-QzDsyL._AC_SY741_.jpg",
+  "trailer": "https://www.youtube.com/embed/XmI7WKrAtqs",
+  "cast": [
+      {"name": "Pedro Pascal", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Pedro_Pascal_by_Gage_Skidmore.jpg/1200px-Pedro_Pascal_by_Gage_Skidmore.jpg"},
+      {"name": "Gina Carano", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Gina_Carano_%2828481393047%29_%28cropped%29.jpg/1200px-Gina_Carano_%2828481393047%29_%28cropped%29.jpg"},
+      {"name": "Carl Weathers", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Carl_Weathers_2019_by_Glenn_Francis.jpg/1200px-Carl_Weathers_2019_by_Glenn_Francis.jpg"}
+  ],
+  "type": "Series"
+},
+{
+  "id": 20,
+  "title": "Black Mirror",
+  "details": "An anthology series exploring a twisted, high-tech multiverse where humanity's greatest innovations and darkest instincts collide.",
+  "rating": 4.6,
+  "year": 2011,
+  "genre": ["Drama", "Sci-Fi", "Thriller"],
+  "duration": "5 Seasons",
+  "picture": "https://m.media-amazon.com/images/I/81RJ-4F9RhS._AC_SY741_.jpg",
+  "trailer": "https://www.youtube.com/embed/jDiYGjp5iFg",
+  "cast": [
+      {"name": "Daniel Lapaine", "picture": "https://www.thestar.com/content/dam/thestar/entertainment/television/2017/11/03/how-black-mirror-helped-daniel-lapaine-land-a-role-on-netflixs-frontier/1frontierlapaine.jpeg"},
+      {"name": "Hannah John-Kamen", "picture": "https://www.syfy.com/sites/syfy/files/styles/1200x680/public/wire/legacy/1572824252_hannahjohnkamen4.jpg"},
+      {"name": "Michaela Coel", "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Michaela_Coel_2018.jpg/1200px-Michaela_Coel_2018.jpg"}
+  ],
+  "type": "Series"
+}
+
+
+
+
+
 ]

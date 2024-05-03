@@ -23,7 +23,7 @@ const TopList = () => {
        <div className='lg:flex'>
          <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'none' }}>
        {
-        topList?.map(top=> 
+        topList?.slice(0,6).map(top=> 
             <ListItem key={top?._id} top={top} alignItems="flex-start">
             <ListItemAvatar>
               <Avatar alt="Remy Sharp" src={top?.picture} />

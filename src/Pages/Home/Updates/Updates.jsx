@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+
 const Updates = () => {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const [updates, setUpdates] = useState();
 
   useEffect(() => {
@@ -14,7 +22,7 @@ const Updates = () => {
   return (
     <div>
       <div className="">
-        <Marquee pauseOnHover autoFill className="border-l-8 border-sky-600 ">
+        <Marquee pauseOnHover autoFill className="border-l-8 border-sky-600 " >
           <div className="flex gap-10 mr-10">
           {updates?.map((update) => (
             <div classname="border-r-4 gap-10" key={update?._id} update={update}>

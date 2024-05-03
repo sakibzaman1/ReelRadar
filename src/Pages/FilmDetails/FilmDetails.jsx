@@ -246,7 +246,7 @@ const FilmDetails = () => {
         </div>
       </Card>
       <div class="lg:w-[70%] pt-10">
-        <div className="flex justify-between">
+        <div className="lg:flex justify-between">
           <iframe
             width="560"
             height="315"
@@ -327,10 +327,10 @@ const FilmDetails = () => {
           </div>
         </div>
         <div className="mt-10">
-          <div className="flex items-center justify-between">
+          <div className="lg:flex items-center justify-between">
           <small className="-ml-[40px] rotate-90 text-xl px-2 py-2 bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-60">Cast & Crew</small>
 
-          <div className="mt-6 grid grid-cols-4 text-center items-center gap-10">
+          <div className="mt-6 lg:grid lg:grid-cols-4 text-center items-center gap-10">
             {loadedFilm?.cast?.map((actor) => (
               <div className=" flex flex-col items-center">
                 <img

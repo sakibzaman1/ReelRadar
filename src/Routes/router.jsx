@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../Layouts/MainLayout/MainLayout';
 import Home from '../Pages/Home/Home';
 import SignIn from '../Pages/SignIn/SignIn';
@@ -18,6 +18,14 @@ import AddFilms from '../Dashboard/Profile/Admin/AddFilms';
 import UserWatchList from '../Dashboard/Profile/User/UserWatchList';
 import StreamNow from '../Dashboard/Profile/User/StreamNow';
 import Favorites from '../Dashboard/Profile/User/Favorites';
+import Movies from '../Pages/Shared/Navbar/Menu/Movies/Movies';
+import Series from '../Pages/Shared/Navbar/Menu/Series/Series';
+import TvShows from '../Pages/Shared/Navbar/Menu/TvShows/TvShows';
+import Hollywood from '../Pages/Shared/Navbar/Menu/Hollywood/Hollywood';
+import Bollywood from '../Pages/Shared/Navbar/Menu/Bollywood/Bollywood';
+import IMDBtop from '../Pages/Shared/Navbar/Menu/IMDBtop/IMDBtop';
+import Oscar from '../Pages/Shared/Navbar/Menu/Oscar/Oscar';
+import Bengali from '../Pages/Shared/Navbar/Menu/Bengali/Bengali';
 
 const router = createBrowserRouter([
     {
@@ -47,12 +55,56 @@ const router = createBrowserRouter([
           element: <FilmDetails></FilmDetails>,
           loader: ({params})=> fetch(`https://reel-radar-server.vercel.app/towatch/${params.id}`)
         },
+        {
+          path: '/movies',
+          element: <Movies></Movies>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/series',
+          element: <Series></Series>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/tvshows',
+          element: <TvShows></TvShows>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/hollywood',
+          element: <Hollywood></Hollywood>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/bollywood',
+          element: <Bollywood></Bollywood>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/imdbtop',
+          element: <IMDBtop></IMDBtop>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/oscar',
+          element: <Oscar></Oscar>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
+        {
+          path: '/bengali',
+          element: <Bengali></Bengali>,
+          loader: ()=> fetch(`https://reel-radar-server.vercel.app/towatch`)
+        },
       ]
     },
     {
       path: 'dashboard',
       element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
       children: [
+        {
+          path: '', // Empty path for the default route
+          element: <Navigate to="userProfile" />
+        },
         {
           path: 'userProfile',
           element: <PrivateRoute><UserProfile></UserProfile></PrivateRoute>

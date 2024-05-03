@@ -4,7 +4,7 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 const AdminProfile = () => {
     const {user} = useContext(AuthContext);
     return (
-        <div className="admin-home-page p-20">
+        <div className="admin-home-page lg:p-20">
        
         <div className="overview">
           

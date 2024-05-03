@@ -11,8 +11,9 @@ import { MdAdminPanelSettings } from 'react-icons/md';
 const UserWatchList = () => {
     const {user} = useContext(AuthContext);
     const watchlist = useLoaderData();
-    const myWatchList = watchlist.filter(myList=> myList?.email.toLowerCase() === user?.email.toLowerCase())
+    
     const [watchList, refetch] = UseWatchlist();
+    const myWatchList = watchList.filter(myList=> myList?.email === user?.email)
     const axiosSecure = UseAxiosSecure();
 
     const handleDelete = _id => {
@@ -42,7 +43,7 @@ const UserWatchList = () => {
     return (
         <div className='w-full lg:px-10'> 
        {
-        myWatchList?.length > 0 ? 
+        watchList?.length > 0 ? 
         <div className="overflow-x-auto ">
              <div className="mx-auto">
         <h1 className="mx-auto text-xl mb-10 px-2 py-2 bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-60">

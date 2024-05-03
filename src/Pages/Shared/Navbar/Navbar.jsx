@@ -44,14 +44,14 @@ const Navbar = () => {
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
       {/* Sidebar content here */}
       <li><Link to='/'>Homepage</ Link></li>
-        <li><Link>Movies</Link></li>
-        <li><Link>Series</    Link></li>
-        <li><Link>TV Shows</    Link></li>
-        <li><Link>Hollywood</    Link></li>
-        <li><Link>Bollywood</    Link></li>
-        <li><Link>IMDB top Rated</    Link></li>
-        <li><Link>Oscar Winning</    Link></li>
-        <li><Link>Bengali</    Link></li>
+        <li><Link to='/movies'>Movies</Link></li>
+        <li><Link to='/series'>Series</    Link></li>
+        <li><Link to='/tvshows'>TV Shows</    Link></li>
+        <li><Link to='/hollywood'>Hollywood</    Link></li>
+        <li><Link to='/bollywood'>Bollywood</    Link></li>
+        <li><Link to='/imdbtop'>IMDB top Rated</    Link></li>
+        <li><Link to='/oscar'>Oscar Winning</    Link></li>
+        <li><Link to='/bengali'>Bengali</    Link></li>
       
     </ul>
   </div>
