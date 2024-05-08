@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
@@ -56,6 +56,7 @@ import {
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FcFilm, FcFilmReel } from "react-icons/fc";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import swal from "sweetalert";
 
 const style = {
   position: "absolute",
@@ -102,6 +103,57 @@ const FilmDetails = () => {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(-1);
 
+  const [reviews, setReviews] = useState();
+
+  useEffect(() => {
+    fetch(`https://reel-radar-server.vercel.app/reviews`)
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+
+  const TargetedReview = reviews?.filter(
+    (review) => review?.filmId === loadedFilm?._id
+  );
+  console.log(TargetedReview);
+
+  const handleReview = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const review = form.get("review");
+    const filmId = loadedFilm?._id;
+    const email = user?.email;
+    const photo = user?.photoURL;
+
+    const addedReview = {
+      review: review,
+      filmId: filmId,
+      email: email,
+      photo: photo,
+    };
+
+    console.log(addedReview);
+
+    fetch("https://reel-radar-server.vercel.app/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addedReview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        swal({
+          position: "top-center",
+          icon: "success",
+          title: "Review Added",
+          showConfirmButton: false,
+          showCancelButton: false,
+          timer: 2000,
+        });
+      });
+  };
+
   const handleAddToWatchlist = () => {
     const myAddedFilm = {
       id: loadedFilm?._id,
@@ -113,7 +165,7 @@ const FilmDetails = () => {
       genre: loadedFilm?.genre,
       email: user?.email,
       cast: loadedFilm?.cast,
-      type: loadedFilm?.type
+      type: loadedFilm?.type,
     };
 
     fetch("https://reel-radar-server.vercel.app/watchlist", {
@@ -138,60 +190,61 @@ const FilmDetails = () => {
   };
 
   return (
-    <div className="lg:flex justify-between  mb-20">
-      <Card className="mt-6 p-2 bg-transparent" sx={{ maxWidth: 345 }}>
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              <img src={loadedFilm?.picture} alt="" />
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
+    <div>
+      <div className="lg:flex justify-between  mb-20">
+        <Card className="mt-6 p-2 bg-transparent" sx={{ maxWidth: 345 }}>
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                <img src={loadedFilm?.picture} alt="" />
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={loadedFilm?.title}
+            subheader={loadedFilm?.year}
+          />
+          <CardMedia
+            className="h-48"
+            component="img"
+            height="194"
+            image={loadedFilm?.picture}
+            alt="Paella dish"
+          />
+          <CardContent>
+            <Typography variant="body2" color="text.secondary">
+              {loadedFilm?.details}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon className="" />
             </IconButton>
-          }
-          title={loadedFilm?.title}
-          subheader={loadedFilm?.year}
-        />
-        <CardMedia
-          className="h-48"
-          component="img"
-          height="194"
-          image={loadedFilm?.picture}
-          alt="Paella dish"
-        />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {loadedFilm?.details}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon className="" />
-          </IconButton>
-          <IconButton
-            onClick={handleAddToWatchlist}
-            aria-label="add to favorites"
-          >
-            <QueueOutlined></QueueOutlined>
-          </IconButton>
-
-          <div className="ml-20">
             <IconButton
-              className=" flex justify-center  gap-6"
-              aria-label="share"
+              onClick={handleAddToWatchlist}
+              aria-label="add to favorites"
             >
-              <FacebookShareButton url={fbShareUrl}>
-                <FacebookIcon size={32} round={true} />
-              </FacebookShareButton>
-              <TwitterShareButton url={twitterShareUrl}>
-                <TwitterIcon size={32} round={true} />
-              </TwitterShareButton>
-              <ShareIcon />
+              <QueueOutlined></QueueOutlined>
             </IconButton>
-          </div>
-          {/* <ExpandMore
+
+            <div className="ml-20">
+              <IconButton
+                className=" flex justify-center  gap-6"
+                aria-label="share"
+              >
+                <FacebookShareButton url={fbShareUrl}>
+                  <FacebookIcon size={32} round={true} />
+                </FacebookShareButton>
+                <TwitterShareButton url={twitterShareUrl}>
+                  <TwitterIcon size={32} round={true} />
+                </TwitterShareButton>
+                <ShareIcon />
+              </IconButton>
+            </div>
+            {/* <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
@@ -199,8 +252,8 @@ const FilmDetails = () => {
           >
             <ExpandMoreIcon />
           </ExpandMore> */}
-        </CardActions>
-        {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
+          </CardActions>
+          {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>Method:</Typography>
             <Typography paragraph>
@@ -233,123 +286,155 @@ const FilmDetails = () => {
           </CardContent>
         </Collapse> */}
 
-        <div className="mt-8 ml-4 justify-start items-center flex gap-4">
-          <FcFilmReel></FcFilmReel>
-          <h2>{loadedFilm?.type}</h2>
-        </div>
+          <div className="mt-8 ml-4 justify-start items-center flex gap-4">
+            <FcFilmReel></FcFilmReel>
+            <h2>{loadedFilm?.type}</h2>
+          </div>
 
-        <div className="mt-8 ml-4 justify-start items-center flex gap-4">
-          <FcFilm></FcFilm>
-          {loadedFilm?.genre?.map((genre) => (
-            <h2>{genre}</h2>
-          ))}
-        </div>
-      </Card>
-      <div class="lg:w-[70%] pt-10">
-        <div className="lg:flex justify-between">
-          <iframe
-            width="560"
-            height="315"
-            src={loadedFilm?.trailer}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+          <div className="mt-8 ml-4 justify-start items-center flex gap-4">
+            <FcFilm></FcFilm>
+            {loadedFilm?.genre?.map((genre) => (
+              <h2>{genre}</h2>
+            ))}
+          </div>
+        </Card>
+        <div class="lg:w-[70%] pt-10">
+          <div className="lg:flex justify-center gap-16">
+            <iframe
+              width="560"
+              height="315"
+              src={loadedFilm?.trailer}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
 
-          <div>
-            <img
-              className="w-60 h-60"
-              src="https://i.ibb.co/dP6N7N4/Reel-Radar-Logo.png"
-              alt=""
-            />
-            <div className="flex items-center">
-              <h1 className="text-3xl">Rate This Film</h1>
-              <IconButton aria-label="share">
-                <div>
-                  <Button onClick={handleOpen}>
-                    {" "}
-                    <StarBorder fontSize="large" color="error" />
-                  </Button>
-                  <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                  >
-                    <Box sx={style}>
-                      <Typography
-                        id="modal-modal-title"
-                        variant="h6"
-                        component="h2"
-                      >
-                        Give Ratings
-                      </Typography>
-                      <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <Box
-                          sx={{
-                            width: 300,
-                            display: "flex",
-                            alignItems: "center",
-                          }}
+            <div>
+              <div className="flex items-center">
+                <h1 className="text-3xl">Rate This Film</h1>
+                <IconButton aria-label="share">
+                  <div>
+                    <Button onClick={handleOpen}>
+                      {" "}
+                      <StarBorder fontSize="large" color="error" />
+                    </Button>
+                    <Modal
+                      open={open}
+                      onClose={handleClose}
+                      aria-labelledby="modal-modal-title"
+                      aria-describedby="modal-modal-description"
+                    >
+                      <Box sx={style}>
+                        <Typography
+                          id="modal-modal-title"
+                          variant="h6"
+                          component="h2"
                         >
-                          <Rating
-                            name="hover-feedback"
-                            value={value}
-                            precision={0.5}
-                            getLabelText={getLabelText}
-                            onChange={(event, newValue) => {
-                              setValue(newValue);
+                          Give Ratings
+                        </Typography>
+                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                          <Box
+                            sx={{
+                              width: 300,
+                              display: "flex",
+                              alignItems: "center",
                             }}
-                            onChangeActive={(event, newHover) => {
-                              setHover(newHover);
-                            }}
-                            emptyIcon={
-                              <StarIcon
-                                style={{ opacity: 0.55 }}
-                                fontSize="inherit"
-                              />
-                            }
-                          />
-                          {value !== null && (
-                            <Box sx={{ ml: 2 }}>
-                              {labels[hover !== -1 ? hover : value]}
-                            </Box>
-                          )}
-                        </Box>
-                      </Typography>
-                    </Box>
-                  </Modal>
-                </div>
-              </IconButton>
+                          >
+                            <Rating
+                              name="hover-feedback"
+                              value={value}
+                              precision={0.5}
+                              getLabelText={getLabelText}
+                              onChange={(event, newValue) => {
+                                setValue(newValue);
+                              }}
+                              onChangeActive={(event, newHover) => {
+                                setHover(newHover);
+                              }}
+                              emptyIcon={
+                                <StarIcon
+                                  style={{ opacity: 0.55 }}
+                                  fontSize="inherit"
+                                />
+                              }
+                            />
+                            {value !== null && (
+                              <Box sx={{ ml: 2 }}>
+                                {labels[hover !== -1 ? hover : value]}
+                              </Box>
+                            )}
+                          </Box>
+                        </Typography>
+                      </Box>
+                    </Modal>
+                  </div>
+                </IconButton>
+              </div>
+              <div className="my-10">
+                <h1 className="my-6">Your Opinion</h1>
+                <form onSubmit={handleReview}>
+                  <textarea
+                    name="review"
+                    placeholder="Write Something"
+                    className="textarea h-28 textarea-bordered textarea-info w-full max-w-xs"
+                  ></textarea>
+                  <button className="bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-full mt-4">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="mt-10">
+            <div className="lg:flex items-center justify-between">
+              <small className="-ml-[40px] rotate-90 text-xl px-2 py-2 bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-60">
+                Cast & Crew
+              </small>
+
+              <div className="mt-6 lg:grid lg:grid-cols-4 text-center items-center gap-10">
+                {loadedFilm?.cast?.map((actor) => (
+                  <div className=" flex flex-col items-center">
+                    <img
+                      className="w-28 h-28 rounded-full btn btn-ghost btn-circle avatar"
+                      src={actor?.picture}
+                      alt=""
+                    />
+                    <button className="btn btn-ghost">
+                      <h1 className="font-bold text-lg w-60 flex justify-center mx-auto items-center text-center mt-2">
+                        {actor?.name}
+                      </h1>
+                    </button>
+                  </div>
+                ))}
+                <MdKeyboardDoubleArrowRight size={80} />
+              </div>
             </div>
           </div>
         </div>
-        <div className="mt-10">
-          <div className="lg:flex items-center justify-between">
-          <small className="-ml-[40px] rotate-90 text-xl px-2 py-2 bg-gradient-to-r from-transparent via-sky-300 to-transparent text-black text-center w-60">Cast & Crew</small>
-
-          <div className="mt-6 lg:grid lg:grid-cols-4 text-center items-center gap-10">
-            {loadedFilm?.cast?.map((actor) => (
-              <div className=" flex flex-col items-center">
+      </div>
+      {/* Review Section */}
+      <div>
+        <h1 className="text-lg mb-10 px-2 py-2 bg-gradient-to-r from-sky-300 via-sky-300 to-transparent text-black  w-60">
+          Reviews
+        </h1>
+        {TargetedReview?.length > 0 ? (
+          <div className="grid grid-cols-3 my-10">
+            {TargetedReview?.map((theReview) => (
+              <div className="flex items-center justify-center gap-4 ">
                 <img
-                  className="w-28 h-28 rounded-full btn btn-ghost btn-circle avatar"
-                  src={actor?.picture}
+                  className="avatar w-10 rounded-full"
+                  src={theReview?.photo}
                   alt=""
                 />
-                <button className="btn btn-ghost">
-                  <h1 className="font-bold text-lg w-60 flex justify-center mx-auto items-center text-center mt-2">
-                    {actor?.name}
-                  </h1>
-                </button>
+                <h1>{theReview?.review}</h1>
               </div>
             ))}
-            <MdKeyboardDoubleArrowRight size={80} />
           </div>
-          
-          </div>
-        </div>
+        ) : (
+          <p className="mb-10">No Reviews yet.</p>
+        )}
       </div>
     </div>
   );
