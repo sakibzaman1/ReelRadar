@@ -1,8 +1,44 @@
-# React + Vite
+# 🎬 Reel Radar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A go-to destination for movie lovers seeking reliable reviews and recommendations to enhance their cinematic experience.**
 
-Currently, two official plugins are available:
+Reel Radar is a full-stack web application that offers users the ability to browse, review, rate, and manage a personalized movie experience — complete with admin control and secure user authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🚀 Live Preview
+[🌐 Client App](https://reel-radar.netlify.app/)  
+
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend**: React, Material UI, TanStack Query (React Query)
+- **Backend**: Node.js, Express.js
+- **Authentication**: Firebase
+- **Database**: MongoDB
+- **Payment Integration**: Stripe (or mention the service used)
+
+---
+
+## 🛠️ Key Features
+
+- 🔐 **Login & Registration** (Firebase Auth)
+- ⭐ **Review & Rating System**
+- 💖 **Add to Favorites & Watchlist**
+- 🔎 **Advanced Movie Search**
+- 🧑‍💼 **Admin Panel** (Manage Movies, Users)
+- 🧰 **Content Management** (Add/Edit/Delete Movies)
+- 💳 **Payment Integration**
+- 🖥️ **Responsive UI**
+
+---
+
+## 📁 GitHub Repositories
+
+- **Client**: [Reel Radar Client](https://github.com/sakibzaman1/ReelRadar)  
+- **Server**: [Reel Radar Server](https://github.com/sakibzaman1/ReelRadarServer)
+
+---
+
