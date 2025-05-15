@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
     <QueryClientProvider client={queryClient}>
-    <div className='max-w-screen-2xl mx-auto p-0 font-josefinSans text-white' style={{backgroundImage: 'url("https://i.ibb.co/WKH3bCM/blackBg.jpg")'}}>
+    <div className='max-w-screen-[1600px] mx-auto p-0 font-josefinSans text-white' style={{backgroundImage: 'url("https://i.ibb.co/WKH3bCM/blackBg.jpg")'}}>
     <HelmetProvider>
     <RouterProvider router={router}></RouterProvider>
     </HelmetProvider>
